@@ -13,8 +13,9 @@ const pageConfig: PageConfig = {
   // If not specified, all monitors will be shown in a single list
   // If specified, monitors will be grouped and ordered, not-listed monitors will be invisble (but still monitored)
   group: {
-    '🌐 Public (example group name)': ['foo_monitor', 'bar_monitor', 'more monitor ids...'],
-    '🔐 Private': ['test_tcp_monitor'],
+    '🌐 Website': ['rimrose.work', 'rimrose.top', 'peek.rimrose.top', 'status.rimrose.top', 'astrbot.rimrose.top', 'napcat.rimrose.top'],
+    '☁️ Cloud Storage': ['Alist12s', 'AlistAliyun', 'AlistWin'],
+    '🔐 Private': ['v2ray', '1panel'],
   },
 }
 
@@ -25,6 +26,75 @@ const workerConfig: WorkerConfig = {
   // passwordProtection: 'username:password',
   // Define all your monitors here
   monitors: [
+    {
+      id: 'rimrose.work',
+      name: 'Blog on Cloudflare',
+      method: 'GET',
+      target: 'https://rimrose.work'
+    },
+    {
+      id: 'rimrose.top',
+      name: 'Blog on Aliyun ECS',
+      method: 'GET',
+      target: 'https://rimrose.top'
+    },
+    {
+      id: 'Alist12s',
+      name: 'Alist on Mi12S',
+      method: 'GET',
+      target: 'http://alist12s.rimrose.top'
+    },
+    {
+      id: 'AlistAliyun',
+      name: 'Alist on Aliyun ECS',
+      method: 'GET',
+      target: 'https://alist.rimrose.top'
+    },
+    {
+      id: 'AlistWin',
+      name: 'Alist on PC',
+      method: 'GET',
+      target: 'http://alistwin.rimrose.top'
+    },
+    {
+      id: 'peek.rimrose.top',
+      name: 'What is Rimrose doing',
+      method: 'GET',
+      target: 'https://peek.rimrose.top'
+    },
+    {
+      id: 'status.rimrose.top',
+      name: 'Status page on Aliyun ECS',
+      method: 'GET',
+      target: 'https://status.rimrose.top/status/statuspage'
+    },
+    {
+      id: 'astrbot.rimrose.top',
+      name: 'AstrBot WebUI',
+      method: 'GET',
+      target: 'https://astrbot.rimrose.top'
+    },
+    {
+      id: 'napcat.rimrose.top',
+      name: 'Napcat WebUI',
+      method: 'GET',
+      target: 'https://napcat.rimrose.top'
+    },
+    {
+      id: 'v2ray',
+      name: 'V2Ray WebUI',
+      method: 'GET',
+      target: 'https://v2ray.rimrose.top'
+    },
+    {
+      id: '1panel',
+      name: '1Panel',
+      method: 'GET',
+      target: 'https://1panel.rimrose.top'
+    },
+
+
+/*    
     // Example HTTP Monitor
     {
       // `id` should be unique, history will be kept if the `id` remains constant
@@ -63,6 +133,9 @@ const workerConfig: WorkerConfig = {
       // [OPTIONAL] if true, the check will fallback to local if the specified proxy is down
       checkProxyFallback: true,
     },
+*/
+    
+/*
     // Example TCP Monitor
     {
       id: 'test_tcp_monitor',
@@ -75,6 +148,7 @@ const workerConfig: WorkerConfig = {
       statusPageLink: 'https://example.com',
       timeout: 5000,
     },
+*/
   ],
   notification: {
     // [Optional] apprise API server URL
